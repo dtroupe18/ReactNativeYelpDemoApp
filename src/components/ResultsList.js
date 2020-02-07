@@ -4,6 +4,12 @@ import ResultsDetail from '../components/ResultsDetail';
 import { withNavigation } from 'react-navigation';
 
 const ResultsList = ({ title, results, navigation }) => {
+
+    // Only show if we have data
+    if (!results.length) {
+        return null;
+    };
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
